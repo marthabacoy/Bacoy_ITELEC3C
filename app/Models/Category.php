@@ -8,11 +8,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    use HasFactory;
     use SoftDeletes;
+    use HasFactory;
+
+
 
     protected $fillable = [
         'category_name',
         'user_id',
     ];
+
+    public function user(){
+        return $this->hasOne(User::class,'id','user_id');
+    }
+    
 }
