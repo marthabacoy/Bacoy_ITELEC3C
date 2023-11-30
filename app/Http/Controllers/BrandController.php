@@ -62,6 +62,7 @@ class BrandController extends Controller
             'brand_image'=> $request->brand_image,
 
         ]);
+        
         return Redirect()->route('brand')->with('success','Updated Succesfully');
     }
     public function RemoveBrand($id){
